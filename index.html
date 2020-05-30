@@ -74,24 +74,48 @@
         textarea::placeholder {
             color: #fff!important;
         }
+        .tab_menu_container {
+        display:flex;
+        }
+        .tab_menu_btn {
+            background:none;
+        border:0;
+        outline:none!important;
+        cursor:pointer;
+        color:#555
+        }
+        .tab_menu_btn.on {
+        border-bottom:4px solid #fff;
+        color:#fff;
+        }
+        .tab_menu_btn:hover {
+        color:#fff;
+        }
+        h1 {
+            font-size:2rem!important;
+        }
+        footer {
+            color: #444;
+            font-size: .8rem;
+        }
     </style>
   </head>
   <body>
     <div class="container-fluid py-5 banner" style="background-image :url(/static/img/main-banner.jpg);">
         <div class="row d-flex justify-content-center pt-5">
-            <div class="col-lg-4 col-10">
+            <div class="col-lg-4 col-12">
                 <img class="w-100" src="/static/img/logo.png" alt="">
             </div>                
         </div>
         <div class="row d-flex justify-content-center pb-5">
-            <div class="col-lg-6 col-10 d-flex justify-content-center">
+            <div class="col-lg-6 col-12 d-flex justify-content-center">
                 <a class="btn btn-light btn-lg" href="#request" role="button">문의하기</a>
             </div>
         </div>
     </div>
     <div class="container-fluid py-5 banner" style="background-image :url(/static/img/white-room.jpg);">
         <div class="row d-flex justify-content-center py-5">
-            <div class="col-lg-6 col-10">
+            <div class="col-lg-6 col-12">
                 <h1>가정 내 <b>공기청정시스템</b></h1>
                 <h1>고객님의 <b>창문은 열려야 합니다.</b></h1>
                 <div class="col-2 sep-line pt-5 mb-3"></div>
@@ -104,9 +128,9 @@
             </div>                
         </div>
     </div>
-    <div class="container-fluid py-5 banner" style="background-image :url();">
+    <div class="container-fluid py-5 banner" >
         <div class="row d-flex justify-content-center py-5">
-            <div class="col-lg-6 col-10">
+            <div class="col-lg-6 col-12" style="background-image :url(/static/img/architecture.png); background-repeat: no-repeat; background-size: auto 200px; background-position:right center;">
                 <h1>한 평의 숲은 <b>방진필터</b></h1>
                 <h1><b>테스트를 통과했습니다</b></h1>
                 <div class="col-2 sep-line pt-5 mb-3"></div>
@@ -121,7 +145,7 @@
     </div>
     <div class="container-fluid py-5 banner-gray">
         <div class="row d-flex justify-content-center py-5">
-            <div class="col-lg-6 col-10" style="background-image :url(/static/img/family.jpg); background-repeat: no-repeat; background-size: auto 500px; background-position: left center; text-align:right">
+            <div class="col-lg-6 col-12" style="background-image :url(/static/img/family.jpg); background-repeat: no-repeat; background-size: auto 500px; background-position: left center; text-align:right">
                 <h1>한 평의 숲은 <b>초정밀 시공으로</b></h1>
                 <h1><b>우리 아이들을 미세먼지로부터</b></h1>
                 <h1><b>보호합니다</b></h1>
@@ -142,7 +166,7 @@
     </div>
     <div class="container-fluid py-5 banner" style="background-image :url();">
         <div class="row d-flex justify-content-center py-5">
-            <div class="col-lg-6 col-10" style="background-image :url(/static/img/nano-filter.png); background-repeat: no-repeat; background-size: auto 400px; background-position:right center;">
+            <div class="col-lg-6 col-12" style="background-image :url(/static/img/nano-filter.png); background-repeat: no-repeat; background-size: auto 400px; background-position:right center;">
                 <h1>한 평의 숲 만의</h1>
                 <h1><b>특허보유</b></h1>
                 <div class="col-2 sep-line pt-5 mb-3"></div>
@@ -152,7 +176,7 @@
     </div>
     <div class="container-fluid py-5 banner-gray" style="background-image :url();">
         <div class="row d-flex justify-content-center py-5">
-            <div class="col-lg-6 col-10" style="">
+            <div class="col-lg-6 col-12" style="">
                 <h1>미세먼지, <b>이제는 공포</b></h1>
                 <div class="col-2 sep-line pt-5 mb-3"></div>
                 <div style="position:relative;height:0;padding-bottom:56.25%;margin:40px 0px">
@@ -163,9 +187,14 @@
     </div>
     <div id="request" class="container-fluid py-5 banner-darkgray" style="background-image :url();">
         <div class="row d-flex justify-content-center py-5">
-            <div class="col-lg-6 col-10">
-                <h1 class="font-white">문의하기</h1>
-                <div class="col-2 sep-line pt-5 mb-3"></div>
+            <div class="col-lg-6 col-12">
+                <h2 class="font-white">문의하기</h2>
+                <div class="tab_wrap py-3">
+                    <div class="tab_menu_container">
+                      <button class="tab_menu_btn tab_menu_btn_1 on mr-2" type="button"><h3>방진망 설치 견적</h3></button>
+                      <button class="tab_menu_btn tab_menu_btn_2" type="button"><h3>대리점 문의</h3></button>
+                        </div>
+                </div>
 
                 <form data-email="1squareforest@gmail.com" method="POST" class="gform" action="https://script.google.com/macros/s/AKfycbwc6Y28LEDr7AvLMJI9qR6h1qrRIgmT0GIZ91nwDQ/exec">
                     <input type="hidden" id="category" name="category" value="방진망 설치 견적">
@@ -200,11 +229,38 @@
             </div>             
         </div>
     </div>
+    <footer class="page-footer">
+        <div class="container-fluid py-5 banner-gray text-center">
+            ㈜아성엔터프라이즈<br>
+            서울시 관악구 남부순환로 1895 2층 C21호<br>
+
+            지사개설문의 kkko09tr@nate.com<br>
+            견적문의 http://1squareforest.com<br>
+            AS문의 02)825-6979<br>
+        </div>
+        
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
+    <script>
+        $('.tab_menu_btn').on('click',function(){
+            $('.tab_menu_btn').removeClass('on');
+            $(this).addClass('on');
+        });
+
+        //1번 컨텐츠
+        $('.tab_menu_btn_1').on('click',function(){
+            $('#category').attr("value","방진망 설치 견적");
+        });
+
+        //2번 컨텐츠
+        $('.tab_menu_btn_2').on('click',function(){
+            $('#category').attr("value","대리점 문의");
+        });
+    </script>
 </body>
 </html>
