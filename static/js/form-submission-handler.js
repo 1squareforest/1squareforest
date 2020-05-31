@@ -61,7 +61,7 @@
         return false;
       }
   
-      disableAllButtons(form)
+      disableAllButtons(form);
       var url = form.action;
       var xhr = new XMLHttpRequest();
       xhr.open('POST', url);
@@ -69,6 +69,7 @@
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function() {
           if (xhr.readyState === 4 && xhr.status === 200) {
+            window.alert("제출되었습니다")
             form.reset();
             var formElements = form.querySelector(".form-elements")
             if (formElements) {
@@ -77,7 +78,7 @@
             var thankYouMessage = form.querySelector(".thankyou_message");
             if (thankYouMessage) {
               thankYouMessage.style.display = "block";
-              window.alert("제출되었습니다")
+              
             }
           }
       };
@@ -86,6 +87,7 @@
           return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
       }).join('&');
       xhr.send(encoded);
+      enableAllButtons(form);
     }
     
     function loaded() {
@@ -103,4 +105,11 @@
         buttons[i].disabled = true;
       }
     }
+
+    function enableAllButtons(form) {
+        var buttons = form.querySelectorAll("button");
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].disabled = false;
+        }
+      }
   })();
